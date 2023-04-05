@@ -24,35 +24,6 @@ contract TronMulticall {
             returnData[i] = ret;
         }
     }
-    
-    function aggregateAssambly(Call[] calldata calls) public view returns (uint256 blockNumber, bytes[] memory returnData) {
-        blockNumber = block.number;
-        returnData = new bytes[](calls.length);
-        for (uint256 i = 0; i < calls.length; ) {
-            (, bytes memory result) = aggregateOneAssambly(calls[i].target, calls[i].callData);
-            result =  returnData[i];
-            unchecked {
-                ++i;
-            }
-        }
-    }
-
-    function aggregateOneAssambly(address target, bytes calldata data) public view returns (bool success, bytes memory result) {
-        assembly {
-            success := staticcall(gas(), target, add(data.offset, 0x20), data.length, 0, 0)
-            let size := returndatasize()
-            result := mload(0x40)
-            mstore(result, size)
-            returndatacopy(add(result, 0x20), 0, size)
-            switch success
-            case 0 {
-                revert(add(result, 0x20), size)
-            }
-        }
-
-        require(success, "Multicall: call failed");  
-    }
-
 
     // Helper functions
     /// @notice Returns the block hash for the given block number
@@ -114,3 +85,4 @@ contract TronMulticall {
         balance = accountAddress.tokenBalance(id);
     }
 }
+
