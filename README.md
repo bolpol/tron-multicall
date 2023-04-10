@@ -2,8 +2,6 @@
 
 ### Multicall contract for TRON network
 
-(NOT TESTED IN PRODUCTION)
-
 Deployed mainnet address 
 ```TBDXCUaJLYiXP3LH9GAZQXywvoGMtEoRdZ```
 
