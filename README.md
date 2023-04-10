@@ -3,10 +3,10 @@
 ### Multicall contract for TRON network
 
 Deployed mainnet address 
-```TBDXCUaJLYiXP3LH9GAZQXywvoGMtEoRdZ```
+```TGXuuKAb4bnrn137u39EKbYzKNXvdCes98```
 
 See on tronscan:
-https://tronscan.org/#/contract/TBDXCUaJLYiXP3LH9GAZQXywvoGMtEoRdZ/code 
+https://tronscan.org/#/contract/TGXuuKAb4bnrn137u39EKbYzKNXvdCes98/code 
 
 
 Tests
